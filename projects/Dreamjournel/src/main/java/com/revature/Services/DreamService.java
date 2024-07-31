@@ -1,5 +1,14 @@
 package com.revature.Services;
 
 
-public interface DreamService   {
+import com.revature.Models.Dream;
+
+import java.util.List;
+
+public interface DreamService {
+
+    List<Dream> getAllDreams();
+
+    Dream getDream(int id);
+
 }
