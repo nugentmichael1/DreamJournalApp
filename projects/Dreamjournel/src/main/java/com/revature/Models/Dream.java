@@ -28,5 +28,11 @@ public class Dream {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false)
     private int id;
-    private LocalDateTime timeStamp;
+    @Column(name = "time_stamp", nullable = false, columnDefinition = "TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP")
+    private LocalDateTime timeStamp = LocalDateTime.now();
+//    @ManyToOne(targetEntity = User.class)
+//    private int userId; //The user this dream belongs to.  One user to many dreams.
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
 }

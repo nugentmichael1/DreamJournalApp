@@ -12,6 +12,6 @@ public interface DreamRepo extends JpaRepository<Dream, Integer> {
 
 //    List<Dream> findAll();
 
-    Dream findDreamById(int id);
+//    Dream findDreamById(int id);
 
 }
