@@ -30,6 +30,8 @@ public class Dream {
     private int id;
     @Column(name = "time_stamp", nullable = false, columnDefinition = "TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime timeStamp = LocalDateTime.now();
+    @Column
+    private int fk_userid;
 //    @ManyToOne(targetEntity = User.class)
 //    private int userId; //The user this dream belongs to.  One user to many dreams.
    // @ManyToOne

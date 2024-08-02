@@ -21,4 +21,8 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUser() {
         return UR.findAll();
     }
+    @Override
+    public User saveUser(User user){
+        return UR.save(user);
+    }
 }

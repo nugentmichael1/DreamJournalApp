@@ -1,22 +1,10 @@
 package com.revature.Controllers;
 import com.revature.Models.Dream;
-import com.revature.Models.User;
-import com.revature.Services.DreamService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import java.util.List;
-import java.util.stream.Collectors;
-
-
-import com.revature.Models.Dream;
 import com.revature.Services.DreamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -41,6 +29,10 @@ public class DreamController {
         System.out.println(dream);
         return dream;
     }
+   //   @GetMapping("users/{id}")
+    //  public Optional<Dream> getAllDreamsByUser(@PathVariable int userid){
+    //    return ds.getAllDreamsByUser(userid);
+   //   }
 
 
     @PostMapping(consumes = "application/json", produces = "application/json")

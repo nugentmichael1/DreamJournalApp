@@ -1,23 +1,17 @@
 package com.revature.Services;
 
 
-import com.revature.Models.User;
 import com.revature.Models.Dream;
 import com.revature.repositories.UserRepo;
 import com.revature.repositories.DreamRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import com.revature.Models.Dream;
-import com.revature.exceptions.ItemNotFoundException;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+
+import com.revature.exceptions.ItemNotFoundException;
+import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 @Service
@@ -33,6 +27,11 @@ public class DreamServiceImpl implements DreamService {
     public List<Dream> getAllDreams() {
         return dr.findAll();
     }
+
+   // @Override
+   // public List<Dream> getAllDreamsByUser(int fk_userid){
+    //    return dr.findAllDreambyuserId(fk_userid);
+    //}
 
     @Override
     public Dream getDream(int id) {
