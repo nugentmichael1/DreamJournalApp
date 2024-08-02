@@ -25,8 +25,18 @@ public class DreamController {
 
     @GetMapping("/{id}")
     public Dream getDream(@PathVariable int id) {
-        Dream dream = ds.getDream(id);
-        System.out.println(dream);
-        return dream;
+        return ds.getDream(id);
+    }
+
+    @PostMapping(consumes = "application/json", produces = "application/json")
+    public Dream addDream(@RequestBody Dream dream){
+        return ds.addDream(dream);
+    }
+
+    @PutMapping(value="/{id}", consumes = "application/json", produces = "application/json")
+    public Dream updateDream(@PathVariable int id, @RequestBody Dream dream){
+        Dream result = ds.updateDream(id, dream);
+        System.out.println(result);
+        return result;
     }
 }
