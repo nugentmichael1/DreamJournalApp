@@ -16,8 +16,9 @@ public class UserServiceImpl implements UserService {
     DreamRepo DR;
     @Autowired
     UserRepo UR;
-<<<<<<< HEAD
+
+    @Override
+    public List<User> getAllUser() {
+        return UR.findAll();
+    }
 }
-=======
-}
->>>>>>> 9c73a5dc03eec89f760587bae0b9e144ea52aacf

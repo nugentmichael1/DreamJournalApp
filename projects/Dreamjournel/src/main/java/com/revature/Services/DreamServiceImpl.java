@@ -1,6 +1,6 @@
 package com.revature.Services;
 
-<<<<<<< HEAD
+
 import com.revature.Models.User;
 import com.revature.Models.Dream;
 import com.revature.repositories.UserRepo;
@@ -12,20 +12,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-=======
 import com.revature.Models.Dream;
 import com.revature.exceptions.ItemNotFoundException;
-import com.revature.repositories.DreamRepo;
-import com.revature.repositories.UserRepo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @Transactional
->>>>>>> 9c73a5dc03eec89f760587bae0b9e144ea52aacf
 @Service
 public class DreamServiceImpl implements DreamService {
 
@@ -42,11 +36,11 @@ public class DreamServiceImpl implements DreamService {
 
     @Override
     public Dream getDream(int id) {
-<<<<<<< HEAD
+
 //        Dream dream = dr.findDreamByDId(id);
 //        System.out.println(dream);
-        return dr.findDreamById(id);
-=======
+        //return dr.findDreamById(id);
+
         Optional<Dream> dreamRetrieved = dr.findById(id);
 
         //Guard: Bad dream ID
@@ -93,6 +87,6 @@ public class DreamServiceImpl implements DreamService {
         retrievedDream.setTimeStamp(updatedDream.getTimeStamp());
 
         return dr.save(updatedDream);
->>>>>>> 9c73a5dc03eec89f760587bae0b9e144ea52aacf
+
     }
 }

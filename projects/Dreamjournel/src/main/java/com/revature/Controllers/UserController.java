@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/users")
 public class UserController {
     UserService US;
 
@@ -19,8 +20,11 @@ public class UserController {
     public UserController(UserService US) {
         this.US = US;
     }
-<<<<<<< HEAD
+    @GetMapping
+    public List<User> getAllUser() {
+        return US.getAllUser();
+    }
 }
-=======
-}
->>>>>>> 9c73a5dc03eec89f760587bae0b9e144ea52aacf
+
+
+
