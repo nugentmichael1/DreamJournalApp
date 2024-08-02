@@ -10,8 +10,4 @@ import java.util.List;
 @Repository
 public interface DreamRepo extends JpaRepository<Dream, Integer> {
 
-//    List<Dream> findAll();
-
-//    Dream findDreamById(int id);
-
 }

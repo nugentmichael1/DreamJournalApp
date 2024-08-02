@@ -35,4 +35,13 @@ public class Dream {
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
+
+    public Dream(int id, List<String> themes, List<Integer> archetypes, String description, String interpretationUser, LocalDateTime timeStamp){
+        this.id = id;
+        this.themes = themes;
+        this.archetypes = archetypes;
+        this.description = description;
+        this.interpretationUser = interpretationUser;
+        this.timeStamp = timeStamp;
+    }
 }

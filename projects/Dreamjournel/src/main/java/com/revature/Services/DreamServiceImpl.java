@@ -40,10 +40,9 @@ public class DreamServiceImpl implements DreamService {
 
     @Override
     public Dream addDream(Dream dream) {
-        //ToDo: verify user supplied Dream object.  Throw exception if missing important values?
-        Dream result = dr.save(dream);
-        System.out.println("DreamServiceImpl:" + result);
-        return result;
+        //ToDo: verify user supplied Dream object.  Throw exception if missing important values or included unnecessary values?
+        //Sanitize dream of an id because database will provide
+        return dr.save(dream);
     }
 
     @Override
@@ -52,27 +51,21 @@ public class DreamServiceImpl implements DreamService {
 
         //Verify dream id exists in database already.
         Optional<Dream> dreamCurrent = dr.findById(id);
+        //Guard: No dream by that ID found in database
         if (dreamCurrent.isEmpty()) {
             throw new ItemNotFoundException("Dream Journal Entry with ID " + id + " not found.");
         }
-
         Dream retrievedDream = dreamCurrent.get();
-        //Update all pieces of dream supplied by user
-        if (updatedDream.getThemes() != null) retrievedDream.setThemes(updatedDream.getThemes());
-        if (updatedDream.getArchetypes() != null) retrievedDream.setArchetypes(updatedDream.getArchetypes());
-        if (updatedDream.getDescription() != null) retrievedDream.setDescription(updatedDream.getDescription());
 
-        //Update imageName if different.  Maybe we handle this in a separate function later.
-//        if (updatedDream.getImageName() != 0) retrievedDream.setImageName(updatedDream.getImageName());
-        //Update AI Interpretation if different.  Maybe we handle this in a separate function later.
-//        if (updatedDream.getInterpretationAI() != null)
-//        retrievedDream.setInterpretationAI(updatedDream.getInterpretationAI());
+        // Update fields using Optional to avoid null checks based on User supplied Dream object
+        Optional.ofNullable(updatedDream.getThemes()).ifPresent(retrievedDream::setThemes);
+        Optional.ofNullable(updatedDream.getArchetypes()).ifPresent(retrievedDream::setArchetypes);
+        Optional.ofNullable(updatedDream.getDescription()).ifPresent(retrievedDream::setDescription);
+        Optional.ofNullable(updatedDream.getInterpretationUser()).ifPresent(retrievedDream::setInterpretationUser);
 
-        if (updatedDream.getInterpretationUser() != null)
-            retrievedDream.setInterpretationUser(updatedDream.getInterpretationUser());
         //Update Time Stamp to now()
         retrievedDream.setTimeStamp(updatedDream.getTimeStamp());
 
-        return dr.save(updatedDream);
+        return dr.save(retrievedDream);
     }
 }
