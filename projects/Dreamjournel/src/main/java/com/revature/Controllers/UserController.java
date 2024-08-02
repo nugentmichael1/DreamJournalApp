@@ -19,4 +19,8 @@ public class UserController {
     public UserController(UserService US) {
         this.US = US;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9c73a5dc03eec89f760587bae0b9e144ea52aacf
