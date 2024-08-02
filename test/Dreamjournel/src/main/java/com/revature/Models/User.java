@@ -1,16 +1,8 @@
-package com.revature.Models;
-
-
+package com.revature.models;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
-import java.util.List;
 
 @Entity
 @Table(name = "users")
-@Getter
-@Setter
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,13 +13,14 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "user")
-    private List<Dream> dreams;
-
     public User(int u_id, String username, String password) {
         this.u_id = u_id;
         this.username = username;
         this.password = password;
+    }
+
+    public int getU_id() {
+        return u_id;
     }
 
     public void setU_id(int u_id) {

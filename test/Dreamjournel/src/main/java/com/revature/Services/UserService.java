@@ -1,4 +1,4 @@
-package com.revature.Services;
+package com.revature.services;
 
 public interface UserService {
 }

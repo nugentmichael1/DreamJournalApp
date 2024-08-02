@@ -1,8 +1,8 @@
-package com.revature.Controllers;
-import com.revature.Models.Dream;
-import com.revature.Models.User;
-import com.revature.Services.DreamService;
-import com.revature.Services.UserService;
+package com.revature.controllers;
+import com.revature.models.Dream;
+import com.revature.models.User;
+import com.revature.services.DreamService;
+import com.revature.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
