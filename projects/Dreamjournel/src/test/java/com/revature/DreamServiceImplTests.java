@@ -1,7 +1,7 @@
 package com.revature;
 
-import com.revature.Models.Dream;
-import com.revature.Services.DreamServiceImpl;
+import com.revature.models.Dream;
+import com.revature.services.DreamServiceImpl;
 import com.revature.exceptions.ItemNotFoundException;
 import com.revature.repositories.DreamRepo;
 import com.revature.repositories.UserRepo;

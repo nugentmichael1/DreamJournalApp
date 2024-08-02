@@ -8,10 +8,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication(scanBasePackages = "com.revature")
 @EntityScan("com.revature.Models")
 @EnableJpaRepositories("com.revature.repositories")
-public class DreamjournelApplication {
+public class DreamJournelApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DreamjournelApplication.class, args);
+		SpringApplication.run(DreamJournelApplication.class, args);
 	}
 
 }
