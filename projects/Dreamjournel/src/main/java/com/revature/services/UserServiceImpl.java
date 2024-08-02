@@ -1,7 +1,8 @@
 package com.revature.services;
+
 import com.revature.models.User;
-import com.revature.repositories.UserRepo;
 import com.revature.repositories.DreamRepo;
+import com.revature.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +19,9 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUser() {
         return UR.findAll();
     }
+
     @Override
-    public User saveUser(User user){
+    public User saveUser(User user) {
         return UR.save(user);
     }
 }
