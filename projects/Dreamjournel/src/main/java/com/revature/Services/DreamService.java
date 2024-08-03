@@ -13,7 +13,7 @@ public interface DreamService {
     Dream getDream(int id);
     Dream addDream(Dream dream);
     Dream updateDream(int id, Dream dream);
-
+    List<Dream> getAllDreamsByUser(int fk_userid);
     Dream deleteDreamById(int id);
 
     // List<Dream> getAllDreamsByUser(int userid);

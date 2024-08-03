@@ -1,5 +1,6 @@
 package com.revature.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -32,10 +33,9 @@ public class Dream {
     private LocalDateTime timeStamp = LocalDateTime.now();
     @Column
     private int fk_userid;
-//    @ManyToOne(targetEntity = User.class)
-//    private int userId; //The user this dream belongs to.  One user to many dreams.
-   // @ManyToOne
-    //@JoinColumn(name="user_id")
-    //private User user;
+   /* @ManyToOne(fetch=FetchType.EAGER)
+    @JsonBackReference
+    @JoinColumn(name = "fk_userid")
+    private User user;*/
 }
 

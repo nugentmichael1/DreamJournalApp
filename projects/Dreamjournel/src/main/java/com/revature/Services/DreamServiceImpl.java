@@ -29,10 +29,10 @@ public class DreamServiceImpl implements DreamService {
         return dr.findAll();
     }
 
-   // @Override
-   // public List<Dream> getAllDreamsByUser(int fk_userid){
-    //    return dr.findAllDreambyuserId(fk_userid);
-    //}
+    @Override
+    public List<Dream> getAllDreamsByUser(int fk_userid){
+        return dr.findAllDreamByFk_userId(fk_userid);
+    }
 
     @Override
     public Dream getDream(int id) {

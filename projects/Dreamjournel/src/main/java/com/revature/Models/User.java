@@ -1,4 +1,5 @@
 package com.revature.Models;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,10 +22,10 @@ public class User {
     private String password;
 
 
-   // @OneToMany(mappedBy = "user")
-   //private List<Dream> dreams;
-
-
+   /* @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name="fk_userid")
+    @JsonManagedReference
+    private List<Dream> dreams;*/
 
 
     public void setU_id(int u_id) {

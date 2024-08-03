@@ -29,10 +29,10 @@ public class DreamController {
         System.out.println(dream);
         return dream;
     }
-   //   @GetMapping("users/{id}")
-    //  public Optional<Dream> getAllDreamsByUser(@PathVariable int userid){
-    //    return ds.getAllDreamsByUser(userid);
-   //   }
+    @GetMapping("/user/{fk_userid}")
+     public List<Dream> getAllDreamsByUser(@PathVariable int fk_userid){
+        return ds.getAllDreamsByUser(fk_userid);
+      }
 
 
     @PostMapping(consumes = "application/json", produces = "application/json")
