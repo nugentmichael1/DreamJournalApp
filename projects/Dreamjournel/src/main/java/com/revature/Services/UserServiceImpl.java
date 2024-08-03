@@ -34,4 +34,5 @@ public class UserServiceImpl implements UserService {
     public User findUsernameAndPassword(String username, String password){
         return UR.findByUsernameAndPassword(username,password);
     }
+
 }

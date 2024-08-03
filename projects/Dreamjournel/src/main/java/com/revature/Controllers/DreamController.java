@@ -46,5 +46,10 @@ public class DreamController {
         System.out.println(result);
         return result;
     }
+    @PutMapping("/delete/{id}")
+    public Dream deleteDreamById(@PathVariable int id){
+    return ds.deleteDreamById(id);
+
+    }
 
 }

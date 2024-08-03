@@ -2,6 +2,7 @@ package com.revature.Services;
 
 
 import com.revature.Models.Dream;
+import com.revature.Models.User;
 import com.revature.repositories.UserRepo;
 import com.revature.repositories.DreamRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -88,4 +89,9 @@ public class DreamServiceImpl implements DreamService {
         return dr.save(updatedDream);
 
     }
+    public Dream deleteDreamById(int id){
+        return dr.deleteById(id);
+
+    }
+
 }
