@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class DreamServiceImplTest {
+class DreamServiceImplTests {
 
     private final List<String> themes1 = List.of("Theme1a", "Theme1b", "Theme1c");
     private final List<String> themes2 = List.of("Theme2a", "Theme2b", "Theme2c");
