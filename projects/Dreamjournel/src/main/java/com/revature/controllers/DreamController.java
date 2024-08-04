@@ -27,10 +27,10 @@ public class DreamController {
     public Dream getDream(@PathVariable int id) {
         return ds.getDream(id);
     }
-    //   @GetMapping("users/{id}")
-    //  public Optional<Dream> getAllDreamsByUser(@PathVariable int userid){
-    //    return ds.getAllDreamsByUser(userid);
-    //   }
+     @GetMapping("/user/{fk_userid}")
+     public List<Dream> getAllDreamsByUser(@PathVariable int fk_userid){
+        return ds.getAllDreamsByUser(fk_userid);
+       }
 
 
     @PostMapping(consumes = "application/json", produces = "application/json")
@@ -42,4 +42,10 @@ public class DreamController {
     public Dream updateDream(@PathVariable int id, @RequestBody Dream dream) {
         return ds.updateDream(id, dream);
     }
+    @PutMapping("/delete/{id}")
+    public Dream deleteDreamById(@PathVariable int id){
+    return ds.deleteDreamById(id);
+
+    }
+
 }

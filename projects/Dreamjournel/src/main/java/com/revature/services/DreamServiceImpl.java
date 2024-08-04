@@ -27,6 +27,11 @@ public class DreamServiceImpl implements DreamService {
     }
 
     @Override
+    public List<Dream> getAllDreamsByUser(int fk_userid){
+        return dr.findAllDreamByFk_userId(fk_userid);
+    }
+
+    @Override
     public Dream getDream(int id) {
         Optional<Dream> dreamRetrieved = dr.findById(id);
 
@@ -55,6 +60,7 @@ public class DreamServiceImpl implements DreamService {
         if (dreamCurrent.isEmpty()) {
             throw new ItemNotFoundException("Dream Journal Entry with ID " + id + " not found.");
         }
+
         Dream retrievedDream = dreamCurrent.get();
 
         // Update fields using Optional to avoid null checks based on User supplied Dream object
@@ -68,4 +74,8 @@ public class DreamServiceImpl implements DreamService {
 
         return dr.save(retrievedDream);
     }
+    public Dream deleteDreamById(int id){
+        return dr.deleteById(id);
+    }
+
 }

@@ -45,6 +45,10 @@ public class UserController {
         return US.findUsernameAndPassword(user.getUsername(),user.getPassword());
 
     }
+   // @PutMapping("/delete")
+   // public User deleteuser(@RequestBody User user){
+   //     return US.deleteuser(user.getUsername());
+   // }
 }
 
 
