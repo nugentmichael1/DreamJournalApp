@@ -20,7 +20,13 @@ public class AuthController {
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request){
-        return ResponseEntity.ok(service.authenticate(request));
+    public ResponseEntity<Object> authenticate(@RequestBody AuthenticationRequest request){
+        AuthenticationResponse as =service.authenticate(request);
+        if(as!=null) {
+            return ResponseEntity.ok(as);
+        }
+        else{
+            return ResponseEntity.status(404).body("incorrect username or password");
+        }
     }
 }
