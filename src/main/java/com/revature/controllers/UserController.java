@@ -1,5 +1,6 @@
 package com.revature.controllers;
 import com.revature.models.User;
+import com.revature.services.DreamService;
 import com.revature.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -15,17 +16,17 @@ import java.util.stream.Collectors;
 @RequestMapping("/users")
 public class UserController {
     UserService US;
-    // DS;
+    DreamService DS;
 
     @Autowired
     public UserController(UserService US) {
         this.US = US;
     }
 
-    //@Autowired
-    //public UserController(DreamService DS) {
-//this.DS = DS;
-    //}
+    @Autowired
+     UserController(DreamService DS) {
+    this.DS = DS;
+    }
 
     @GetMapping()
     public List<User> getAllUser() {
@@ -62,6 +63,8 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void deleteuser(@PathVariable int id){
         US.deleteById(id);
+        DS.getAllDreamsByUser(id);
+
     }
 
     @GetMapping("/{id}")
