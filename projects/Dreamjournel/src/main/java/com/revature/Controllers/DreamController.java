@@ -2,6 +2,7 @@ package com.revature.Controllers;
 import com.revature.Models.Dream;
 import com.revature.Services.DreamService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
@@ -47,8 +48,15 @@ public class DreamController {
         return result;
     }
     @PutMapping("/delete/{id}")
-    public Dream deleteDreamById(@PathVariable int id){
-    return ds.deleteDreamById(id);
+    public ResponseEntity<Object> deleteDreamById(@PathVariable int id){
+        Dream dream =ds.getDream(id);
+        if(dream!=null) {
+            Dream del = ds.deleteDreamById(id);
+            return ResponseEntity.ok().body(del);
+        }
+        else {
+            return ResponseEntity.status(404).body("Dream doesn't exist");
+        }
 
     }
 
