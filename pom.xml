@@ -11,7 +11,7 @@
 	<groupId>com.revature</groupId>
 	<artifactId>DreamJournal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Dreamjournel</name>
+	<name>DreamJournal</name>
 	<description> project for Spring Boot</description>
 	<url/>
 	<licenses>
