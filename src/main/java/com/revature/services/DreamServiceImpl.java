@@ -87,7 +87,7 @@ public class DreamServiceImpl implements DreamService {
     }
 
     public void deleteDreamsByUserid(int id){
-        dr.deleteByFkUserId(id);
+         dr.deleteByFk_userid(id);
     }
 }
 
