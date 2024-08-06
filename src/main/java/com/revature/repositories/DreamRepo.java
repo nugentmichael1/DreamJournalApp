@@ -19,8 +19,10 @@ public interface DreamRepo extends JpaRepository<Dream, Integer> {
     @Query("SELECT d FROM Dream d WHERE d.fk_userid  = :fk_userid")
     List<Dream> findAllDreamByFk_userId (int fk_userid);
     Dream deleteById(int id);
-    @Query("Delete d FROM Dream d WHERE d.fk_userid  = :fk_userid")
-    Dream deleteByFk_userid(int fk_userid);
+
+
+    @Query("Delete FROM Dream d WHERE d.fk_userid  = :fk_userid")
+    void deleteByFkUserId(int fk_userid);
 }
 
 
